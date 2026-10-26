@@ -1,0 +1,50 @@
+{
+  "manifest_version": 3,
+  "name": "SoundCloud By Vanhai",
+  "version": "4.0.0",
+  "description": "Lưu điểm phát/ngừng từng bài (Cue Points), nạp bài tiếp theo cực sớm vào RAM và phát song song không delay 1ms.",
+  "permissions": [
+    "declarativeNetRequest",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://soundcloud.com/*",
+    "https://api-v2.soundcloud.com/*",
+    "https://*.sndcdn.com/*"
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "cors_rules",
+        "enabled": true,
+        "path": "rules/cors_rules.json"
+      }
+    ]
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://soundcloud.com/*"],
+      "js": ["inject.js"],
+      "world": "MAIN",
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["https://soundcloud.com/*"],
+      "js": ["hls.light.min.js", "content.js"],
+      "world": "ISOLATED",
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "SoundCloud By Vanhai"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
