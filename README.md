@@ -4,6 +4,12 @@ Extension Chrome Manifest V3 hỗ trợ **lưu điểm Bắt Đầu (Start Cue) 
 
 ---
 
+LƯU Ý #####
+TẢI FILE ZIP:  extension soundcloud.zip  //// giải nén rồi thêm vào chrome 
+CỨ THẾ MÀ SÀI 
+thằng nào thấy hay lấy về phát triển như spotifi chức năng phối cho t sài với nha=)))))
+trình vibe đc như này thôi:)
+
 ## Tính năng nổi bật
 
 1. **Giao diện Trắng Hồng Pastel thanh lịch (Không icon emoji):**
